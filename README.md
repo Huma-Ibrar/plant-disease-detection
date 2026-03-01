@@ -8,7 +8,7 @@ To use this project, you need to download a pre-trained model from the given Goo
 ## Steps to Download and Place the Model
 
 1. **Download the Model**
-   - Click [here](https://drive.google.com/file/d/1Ond7UzrNOfdAXWedjlZr2sDXYU6MRBuj/view?usp=sharing) to open the Google Drive link.
+   - Click [here](https://drive.google.com/file/d/1MbLe0qYmWtAn9TQNLGjPNLwbCcj5cpEk/view?usp=drive_link) to open the Google Drive link.
    - Click the **Download** button to save the file to your local system.
 
 2. **Create the Models Folder**
