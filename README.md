@@ -123,7 +123,7 @@ Since the trained model file is large, it is hosted on Google Drive.
 Download the pre-trained model here:  
 https://drive.google.com/file/d/1MbLe0qYmWtAn9TQNLGjPNLwbCcj5cpEk/view?usp=drive_link
 
-⚠ Ensure the file access is set to **"Anyone with the link → Viewer"** before downloading.
+
 
 ---
 
@@ -176,7 +176,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### 1️⃣ Update Model Path
 
