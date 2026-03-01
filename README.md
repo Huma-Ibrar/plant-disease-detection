@@ -215,12 +215,22 @@ Open the URL displayed in the terminal in your web browser.
 ```
 plant-disease-detection/
 │
-├── app.py
 ├── models/
+│   └── note.txt
+│
 ├── static/
+│   ├── css/
+│   ├── images/
+│   └── js/
+│
 ├── templates/
-├── requirements.txt
-└── README.md
+│   └── home.html
+│
+├── .gitignore
+├── README.md
+├── app.py
+├── plant_disease.json
+└── requirements.txt
 ```
 
 ---
