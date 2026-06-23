@@ -1,70 +1,45 @@
-# 🌿 Plant Disease Recognition System
+# 🌿 Plant Disease Recognition System with Multi-Language Support
 
- Enhanced with Computer Vision Guardrails for Production Reliability  
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![Framework](https://img.shields.io/badge/Framework-Flask-lightgrey.svg)](https://flask.palletsprojects.com/)
+[![Deep Learning](https://img.shields.io/badge/Deep%20Learning-TensorFlow%20%2F%20Keras-orange.svg)](https://www.tensorflow.org/)
+[![Computer Vision](https://img.shields.io/badge/Computer%20Vision-OpenCV-red.svg)](https://opencv.org/)
 
-A Machine Learning and Deep Learning-based web application that detects plant diseases from leaf images using a Convolutional Neural Network (CNN).
+An enterprise-grade Machine Learning and Deep Learning web application designed to classify plant leaf diseases from user-uploaded images using an optimized Convolutional Neural Network (CNN). 
 
-This project goes beyond a basic research prototype by adding intelligent validation mechanisms to ensure reliable, high-confidence predictions in real-world usage.
+Unlike academic prototypes, this system bridges the gap between research and production by implementing robust computer vision guardrails to validate image quality and providing a seamless, accessible user experience for localized farming communities.
 
 ---
 
 ## 📌 Table of Contents
-
-- [About The Project](#-about-the-project)
-- [Key Features](#-key-features)
-- [Intelligent Image Validation](#-intelligent-image-validation)
-- [Production-Level Enhancements](#-production-level-enhancements)
-- [Technical Stack](#-technical-stack)
-- [System Workflow](#-system-workflow)
-- [Model Setup](#-model-setup)
-- [Installation](#-installation)
-- [Running the Application](#-running-the-application)
-- [Project Structure](#-project-structure)
-- [License](#-license)
-
----
-
-## 📖 About The Project
-
-The **Plant Disease Recognition System** is a Machine Learning and Deep Learning application designed to classify plant leaf diseases using a trained CNN model.
-
-While many ML projects stop at model training, this system focuses on **AI reliability and production readiness** by integrating computer vision guardrails to handle real-world image quality issues.
-
-Due to GitHub file size limitations, the trained model is hosted separately on Google Drive.
+* [Key Features](#-key-features)
+* [Intelligent Image Validation (Guardrails)](#-intelligent-image-validation-guardrails)
+* [Multi-Language Architecture](#-multi-language-architecture)
+* [Technical Stack](#-technical-stack)
+* [Project Structure](#-project-structure)
+* [Installation & Environment Setup](#-installation--environment-setup)
+* [Model Setup & Weights Deployment](#-model-setup--weights-deployment)
+* [Running the Application](#-running-the-application)
+* [Core Production Enhancements](#-core-production-enhancements)
+* [Acknowledgment](#-acknowledgment)
 
 ---
 
 ## ✨ Key Features
-
--  Plant disease detection from leaf images
--  CNN-based image classification
--  Intelligent blur detection using OpenCV
--  Background noise validation
--  UUID-based secure file handling
--  Fast and user-friendly web interface
--  Deployment-ready project structure
+* **High-Accuracy CNN Inference:** Rapid plant disease classification utilizing a fine-tuned deep learning model architecture.
+* **Production-Ready Guardrails:** Integrated OpenCV validation to minimize false positives caused by sub-optimal inputs (e.g., automatically rejecting blurry uploads).
+* **Bilingual Localization (Urdu & English):** Multi-language user interface support, making the diagnostic reports accessible to local farmers and global users alike.
+* **Secure Session Handling:** Employs UUID-based filename masking to eliminate file system race conditions and collisions.
+* **Responsive UI:** Clean, human-centric web frontend developed natively using Flask templates.
 
 ---
 
-## Intelligent Image Validation
+## 🛡️ Intelligent Image Validation (Guardrails)
 
-To improve prediction reliability, the system includes computer vision guardrails:
+To maximize real-world classification confidence and avoid processing corrupted/garbage data, the backend enforces strict image pre-validation protocols:
 
-###  Blur Detection (OpenCV)
-
-The application calculates the **Laplacian variance** of the uploaded image:
-
-- Images with a focus score below **80** are automatically rejected.
-- Prevents inaccurate predictions caused by blurry inputs.
-- Ensures high-confidence model inference.
-
-###  Background Noise Detection
-
-Additional validation ensures that:
-- The model focuses strictly on plant leaf regions.
-- Irrelevant or noisy backgrounds do not affect classification results.
-
-Example blur detection logic:
+### 1. Advanced Blur Detection (Laplacian Variance)
+The pipeline calculates the focus metric using the Laplacian operator's variance. If a user uploads an out-of-focus or shaky image, the system instantly catches it, halts inference, and alerts the user in their preferred language to upload a clearer image.
 
 ```python
 import cv2
@@ -73,174 +48,105 @@ def calculate_blur_score(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     return cv2.Laplacian(gray, cv2.CV_64F).var()
 
+# Production Threshold Enforcement
 if blur_score < 80:
-    return "Image is too blurry. Please upload a clearer image."
-```
+    return {
+        "en": "Inference Rejected: Image focus score is too low. Please upload a clearer image.",
+        "ur": "تصدیق مسترد: تصویر دھندلی ہے۔ براہ کرم واضح تصویر اپلوڈ کریں۔"
+    }
+2. Background Noise & Context Validation
+Secondary structural filters ensure that the input frame contains adequate target features (leaf margins and surfaces) while discarding excessive background clutter or unrelated noise.
 
----
+🌐 Multi-Language Architecture
+To democratize AI utility in agriculture, the system features localized state handling:
 
-##  Production-Level Enhancements
+English Interface: Tailored for researchers, developers, and global deployment contexts.
 
-This project was refactored to bridge the gap between research and real-world deployment:
+Urdu Interface: Tailored for local field workers and farmers to ensure actionability of the health diagnostic output without a language barrier.
 
--  UUID-based image naming to prevent file collisions
--  Secure and unique image processing
--  Standardized `requirements.txt` for reproducibility
--  Modular backend structure
--  Clean separation of model loading and inference logic
+🏗️ Technical Stack
+Backend Framework: Flask (Python)
 
----
+Computer Vision Processing: OpenCV-Python
 
-## 🏗️ Technical Stack
+Deep Learning Framework: TensorFlow / Keras
 
-- Python  
-- Flask  
-- OpenCV  
-- TensorFlow / Keras  
-- NumPy  
-- UUID  
-- Machine Learning & Deep Learning (CNN)
+Numerical Operations: NumPy
 
----
+Data Serialization: JSON
 
-## 📊 System Workflow
+File Management: UUID Architecture
 
-1. User uploads plant leaf image  
-2. Blur detection checks image clarity  
-3. Background validation runs  
-4. Image is assigned a unique UUID filename  
-5. CNN model performs classification  
-6. Disease prediction result is displayed  
+📁 Project Structure
+The repository strictly decouples configuration, static distributions, view templates, and execution scripts:
 
----
-
-## 📥 Model Setup
-
-Since the trained model file is large, it is hosted on Google Drive.
-
-### 🔗 Download Model
-
-Download the pre-trained model here:  
-https://drive.google.com/file/d/1MbLe0qYmWtAn9TQNLGjPNLwbCcj5cpEk/view?usp=drive_link
-
-
-
----
-
-### 📂 Step 1: Create Models Folder
-
-Navigate to the project root directory and create a folder named `models` if it does not exist:
-
-```bash
-mkdir models
-```
-
----
-
-### 📦 Step 2: Move the Model File
-
-Move the downloaded model file into the `models` directory:
-
-```bash
-mv /path/to/downloaded/model models/
-```
-
-Replace `/path/to/downloaded/model` with your actual file location.
-
----
-
-### ✅ Step 3: Verify Model Placement
-
-```bash
-ls models
-```
-
-You should see your model file listed.
-
----
-
-## ⚙ Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Huma-Ibrar/plant-disease-detection.git
-cd plant-disease-detection
-```
-
-Install required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-##  Running the Application
-
-### 1️⃣ Update Model Path
-
-Open `app.py` and locate:
-
-```python
-tf.keras.models.load_model("")
-```
-
-Update it to:
-
-```python
-tf.keras.models.load_model("models/your_model_file.keras")
-```
-
-Replace `your_model_file.keras` with your actual model filename.
-
----
-
-### 2️⃣ Start the Server
-
-```bash
-python app.py
-```
-
----
-
-### 3️⃣ Access the Application
-
-Open the URL displayed in the terminal in your web browser.
-
----
-
-## 📁 Project Structure
-
-```
+Plaintext
 plant-disease-detection/
 │
 ├── models/
-│   └── note.txt
+│   └── .gitkeep                         # Placeholder (Actual weights managed via external deployment)
 │
 ├── static/
-│   ├── css/
-│   ├── images/
-│   └── js/
+│   ├── css/                             # Component stylesheets
+│   ├── images/                          # Native UI graphic assets
+│   └── js/                              # Client-side form interceptors
 │
 ├── templates/
-│   └── home.html
+│   └── home.html                        # Main interface viewport
 │
-├── .gitignore
-├── README.md
-├── app.py
-├── plant_disease.json
-└── requirements.txt
-```
+├── .gitignore                           # Excludes local research logs, dataset docs & .keras arrays
+├── README.md                            # Technical system specification
+├── app.py                               # Core application controller & inference pipeline
+├── plant_disease.json                   # Class mapping references
+└── requirements.txt                     # Deterministic dependency manifest
+⚙️ Installation & Environment Setup
+Clone the Repository:
 
----
+Bash
+   git clone [https://github.com/Huma-Ibrar/plant-disease-detection.git](https://github.com/Huma-Ibrar/plant-disease-detection.git)
+   cd plant-disease-detection
+Configure Virtual Environment:
 
-## 📜 License
+Bash
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
+Install Dependencies:
 
-This project is developed for educational and research purposes.
+Bash
+   pip install -r requirements.txt
+📥 Model Setup & Weights Deployment
+Note: Due to standard remote asset host file size limits, the deployment-grade binary weights file (plant_disease_recog_model_pwp.keras) is provisioned externally.
 
----
+Download Weights File: Obtain the serialized Keras artifact via our managed storage node:
 
-## 🙌 Acknowledgment
+👉 Download Pre-trained Model Weights (Ensure file is saved exactly as plant_disease_recog_model_pwp.keras)
 
-This project builds upon the open-source work of Vivek Kumar and has been enhanced to improve reliability, robustness, and production readiness.
+Initialize Model Matrix Directory:
+
+Bash
+   mkdir models
+Deploy Artifact: Transfer the downloaded .keras file directly into the newly provisioned models/ directory.
+
+🚀 Running the Application
+Verify Asset Configuration: Ensure that line execution parameters inside app.py resolve appropriately against the localized model array path:
+
+Python
+   tf.keras.models.load_model("models/plant_disease_recog_model_pwp.keras")
+Boot Web Daemon:
+
+Bash
+   python app.py
+Access Service Interface: Launch your web browser and navigate to the loopback target endpoint displayed in your execution shell terminal (typically http://127.0.0.1:5000/).
+
+🚀 Core Production Enhancements
+Collision-Free File Handling: Replaced original explicit client-side file names with cryptographic uuid4() configurations to ensure sandbox isolation during simultaneous web access.
+
+Strict Separation of Concerns: Abstracted model definitions, web routing engines, and raw mathematical transformations into a robust state handler loop in app.py.
+
+Reproducible Dependencies: Locked absolute versions across core image processing binaries to guarantee compile-time stability across different operating systems.
+
+🙌 Acknowledgment
+This production iteration builds upon foundations originally contributed by Vivek Kumar, extending infrastructure boundaries to address deployment reliability, strict error bounding, and computational guardrails.

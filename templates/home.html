@@ -37,6 +37,46 @@
         text-align: left !important;
         direction: ltr !important;
       }
+      
+      /* FORCE FIX: Overriding static/css/style.css hidden layout properties */
+      html, body {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-y: auto !important;
+      }
+      .carousel, .carousel-inner, .carousel-item {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+      }
+      .carousel-text-wrapper {
+        height: auto !important;
+        min-height: 100vh !important;
+        padding-top: 5vh !important;
+        padding-bottom: 80px !important; /* Content ke niche extra space text bachane ke liye */
+        overflow: visible !important;
+        display: block !important; /* Flexbox block execution taake scroll on ho sake */
+      }
+      .form-box {
+        margin: 0 auto 20px auto !important;
+        float: none !important;
+      }
+      .result-container {
+        display: block !important;
+        clear: both !important;
+      }
+      .result-box {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 768px) {
+        .result-box {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
     </style>
   </head>
   <body>
@@ -63,7 +103,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="carousel-text-wrapper">
-            <h1 class="carousel-text-title">
+            <h1 class="carousel-text-title text-center mb-4">
               {% if lang == 'ur' %}پودوں کی بیماریوں کی تشخیص{% else %}Plant Disease Recognition{% endif %}
             </h1>
 
@@ -146,6 +186,7 @@
                       src="{{imagepath}}"
                       alt="uploaded image"
                       class="result-image"
+                      style="max-height: 250px; object-fit: cover; border-radius: 8px;"
                     />
                   </div>
 
@@ -178,6 +219,14 @@
     <script src="../static/js/bootstrap.bundle.min.js"></script>
     <script>
       const hasResultOnScreen = {% if result %}true{% else %}false{% endif %};
+
+      // Auto scroll container into view upon result print
+      if (hasResultOnScreen) {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
 
       function updateFileName() {
         const input = document.getElementById("img-input");
