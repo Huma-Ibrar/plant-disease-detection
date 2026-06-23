@@ -1,0 +1,10 @@
+?? PLANT DISEASE DETECTION MODEL FILE
+
+Due to GitHub's file size limitations (100MB+), the trained deep learning model weights are hosted externally.
+
+?? Download the model file here:
+https://drive.google.com/file/d/1MbLe0qYmWtAn9TQNLGjPNLwbCcj5cpEk/view?usp=drive_link
+
+?? Instructions:
+1. Download the 'plant_disease_recog_model_pwp.keras' file from the link above.
+2. Place it directly inside this 'models/' directory before running app.py.
