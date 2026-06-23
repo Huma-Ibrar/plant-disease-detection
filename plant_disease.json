@@ -11,7 +11,7 @@
     },
     {
         "name": "Apple___Cedar_apple_rust",
-        "cause": "Fungus Gymnosporangium juniperi-virginianae. Requires junipers as an alternate host.",
+        "cause": "Fungus Gymonosporangium juniperi-virginianae. Requires junipers as an alternate host.",
         "cure": "Remove nearby juniper hosts. Use resistant varieties and fungicides."
     },
     {
@@ -22,7 +22,10 @@
     {
         "name": "Background_without_leaves",
         "cause": "No disease or plant detected.",
-        "cure": "Not applicable."
+        "cure": "Not applicable.",
+        "name_urdu": "پتہ نہیں ملا (No Leaf Detected)",
+        "cause_urdu": "اپ لوڈ کی گئی تصویر میں کوئی پودا یا پتہ نظر نہیں آ رہا۔",
+        "cure_urdu": "براہ کرم یقینی بنائیں کہ پتہ تصویر کے درمیان میں ہو اور واضح ہو۔"
     },
     {
         "name": "Blueberry___healthy",
@@ -146,52 +149,82 @@
     },
     {
         "name": "Tomato___Bacterial_spot",
-        "cause": "Bacterium Xanthomonas spp.",
-        "cure": "Apply copper-based bactericides and practice crop rotation."
+        "cause": "Apply copper-based bactericides and practice crop rotation.",
+        "cure": "Apply copper-based bactericides and practice crop rotation.",
+        "name_urdu": "ٹماٹر کا جراثیمی دھبہ (Bacterial Spot)",
+        "cause_urdu": "یہ بیماری زانتھوموناس نامی جراثیم کی وجہ سے پھیلتی ہے۔",
+        "cure_urdu": "تانبے پر مشتمل ادویات (Copper Bactericides) کا استعمال کریں اور فصلوں کا ہیر پھیر کریں۔"
     },
     {
         "name": "Tomato___Early_blight",
         "cause": "Fungus Alternaria solani.",
-        "cure": "Apply fungicides and remove infected leaves."
+        "cure": "Apply fungicides and remove infected leaves.",
+        "name_urdu": "ٹماٹر کا اگیتا جھلساؤ (Early Blight)",
+        "cause_urdu": "یہ بیماری الٹرنیریا سولانی نامی فنگس کی وجہ سے پھیلتی ہے۔",
+        "cure_urdu": "کاپر فنگسائیڈ کا سپرے کریں اور پودے کے نیچے والے متاثرہ پتوں کو کاٹ کر ضائع کر دیں۔"
     },
     {
         "name": "Tomato___Late_blight",
         "cause": "Pathogen Phytophthora infestans.",
-        "cure": "Use resistant varieties and fungicides."
+        "cure": "Use resistant varieties and fungicides.",
+        "name_urdu": "ٹماٹر کا پچھیتا جھلساؤ (Late Blight)",
+        "cause_urdu": "یہ بیماری فائٹوفٹورا انفیسٹان نامی فنگس کی وجہ سے پھیلتی ہے۔",
+        "cure_urdu": "بیماری کے خلاف مدافعت رکھنے والی اقسام کاشت کریں اور فنگسائیڈ کا بروقت سپرے کریں۔"
     },
     {
         "name": "Tomato___Leaf_Mold",
         "cause": "Fungus Passalora fulva.",
-        "cure": "Apply fungicides and ensure good ventilation."
+        "cure": "Apply fungicides and ensure good ventilation.",
+        "name_urdu": "ٹماٹر کا پتا جھلسنا (Leaf Mold)",
+        "cause_urdu": "یہ بیماری پاسالورا فلوا نامی فنگس کی وجہ سے ہوتی ہے۔",
+        "cure_urdu": "فنگسائیڈز کا استعمال کریں اور گرین ہاؤس یا کھیت میں ہوا کی آمدورفت کو بہتر بنائیں۔"
     },
     {
         "name": "Tomato___Septoria_leaf_spot",
         "cause": "Fungus Septoria lycopersici.",
-        "cure": "Remove infected leaves and apply fungicides."
+        "cure": "Remove infected leaves and apply fungicides.",
+        "name_urdu": "ٹماٹر کا سیپٹوریا دھبہ (Septoria Leaf Spot)",
+        "cause_urdu": "یہ بیماری سیپٹوریا لائکوپرسیسی نامی فنگس کی وجہ سے پھیلتی ہے۔",
+        "cure_urdu": "متاثرہ پتے کاٹ دیں، پودوں کو نیچے سے پانی دیں اور مناسب فنگسائیڈ کا استعمال کریں۔"
     },
     {
         "name": "Tomato___Spider_mites Two-spotted_spider_mite",
         "cause": "Spider mites Tetranychus urticae.",
-        "cure": "Use miticides or insecticidal soaps."
+        "cure": "Use miticides or insecticidal soaps.",
+        "name_urdu": "ٹماٹر کی سرخ مکڑی (Spider Mites)",
+        "cause_urdu": "یہ ٹیٹرانائیکس ارٹیکی نامی باریک مکڑیوں کے حملے کی وجہ سے ہوتا ہے۔",
+        "cure_urdu": "مکڑی مار ادویات (Miticides) یا صابن کے محلول (Insecticidal Soaps) کا سپرے کریں۔"
     },
     {
         "name": "Tomato___Target_Spot",
         "cause": "Fungus Corynespora cassiicola.",
-        "cure": "Apply fungicides and ensure good air circulation."
+        "cure": "Apply fungicides and ensure good air circulation.",
+        "name_urdu": "ٹماٹر کا ہدف والا دھبہ (Target Spot)",
+        "cause_urdu": "یہ بیماری کورینیسپورا کاسیکولا نامی فنگس کی وجہ سے ہوتی ہے۔",
+        "cure_urdu": "فنگسائیڈ کا سپرے کریں اور پودوں کے درمیان مناسب فاصلہ رکھیں تاکہ ہوا کا گزر ہو سکے۔"
     },
     {
         "name": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
         "cause": "Virus spread by whiteflies.",
-        "cure": "Control whitefly population and use resistant varieties."
+        "cure": "Control whitefly population and use resistant varieties.",
+        "name_urdu": "ٹماٹر کا مروڑیا وائرس (Yellow Leaf Curl Virus)",
+        "cause_urdu": "یہ وائرس سفید مکھی (Whitefly) کے ذریعے ایک پودے سے دوسرے پودے میں پھیلتا ہے۔",
+        "cure_urdu": "سفید مکھی کو کنٹرول کرنے کے لیے کیڑے مار ادویات کا استعمال کریں اور مدافعت والی اقسام لگائیں۔"
     },
     {
         "name": "Tomato___Tomato_mosaic_virus",
         "cause": "Virus transmitted through contact and contaminated tools.",
-        "cure": "Remove infected plants and sterilize tools."
+        "cure": "Remove infected plants and sterilize tools.",
+        "name_urdu": "ٹماٹر کا موزیک وائرس (Mosaic Virus)",
+        "cause_urdu": "یہ وائرس چھونے اور استعمال شدہ آلات کے ذریعے پھیلتا ہے۔",
+        "cure_urdu": "متاثرہ پودوں کو جڑ سے اکھاڑ کر جلا دیں اور کام کرنے والے اوزاروں کو لازمی سٹرلائز کریں۔"
     },
     {
         "name": "Tomato___healthy",
         "cause": "No disease present.",
-        "cure": "Maintain good cultural practices for optimal health."
+        "cure": "Maintain good cultural practices for optimal health.",
+        "name_urdu": "صحت مند ٹماٹر کا پتا (Healthy Tomato Leaf)",
+        "cause_urdu": "پودا بالکل صحت مند ہے اور کوئی بیماری موجود نہیں ہے۔",
+        "cure_urdu": "پودے کی اچھی صحت برقرار رکھنے کے لیے کھاد اور پانی کا صحیح استعمال جاری رکھیں۔"
     }
 ]
