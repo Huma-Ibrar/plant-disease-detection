@@ -1,3 +1,4 @@
+
 # 🌿 Plant Disease Recognition System with Multi-Language Support
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
@@ -54,33 +55,40 @@ if blur_score < 80:
         "en": "Inference Rejected: Image focus score is too low. Please upload a clearer image.",
         "ur": "تصدیق مسترد: تصویر دھندلی ہے۔ براہ کرم واضح تصویر اپلوڈ کریں۔"
     }
-2. Background Noise & Context Validation
+
+```
+
+### 2. Background Noise & Context Validation
+
 Secondary structural filters ensure that the input frame contains adequate target features (leaf margins and surfaces) while discarding excessive background clutter or unrelated noise.
 
-🌐 Multi-Language Architecture
+---
+
+## 🌐 Multi-Language Architecture
+
 To democratize AI utility in agriculture, the system features localized state handling:
 
-English Interface: Tailored for researchers, developers, and global deployment contexts.
+* **English Interface:** Tailored for researchers, developers, and global deployment contexts.
+* **Urdu Interface:** Tailored for local field workers and farmers to ensure actionability of the health diagnostic output without a language barrier.
 
-Urdu Interface: Tailored for local field workers and farmers to ensure actionability of the health diagnostic output without a language barrier.
+---
 
-🏗️ Technical Stack
-Backend Framework: Flask (Python)
+## 🏗️ Technical Stack
 
-Computer Vision Processing: OpenCV-Python
+* **Backend Framework:** Flask (Python)
+* **Computer Vision Processing:** OpenCV-Python
+* **Deep Learning Framework:** TensorFlow / Keras
+* **Numerical Operations:** NumPy
+* **Data Serialization:** JSON
+* **File Management:** UUID Architecture
 
-Deep Learning Framework: TensorFlow / Keras
+---
 
-Numerical Operations: NumPy
+## 📁 Project Structure
 
-Data Serialization: JSON
-
-File Management: UUID Architecture
-
-📁 Project Structure
 The repository strictly decouples configuration, static distributions, view templates, and execution scripts:
 
-Plaintext
+```text
 plant-disease-detection/
 │
 ├── models/
@@ -99,54 +107,89 @@ plant-disease-detection/
 ├── app.py                               # Core application controller & inference pipeline
 ├── plant_disease.json                   # Class mapping references
 └── requirements.txt                     # Deterministic dependency manifest
-⚙️ Installation & Environment Setup
-Clone the Repository:
 
-Bash
-   git clone [https://github.com/Huma-Ibrar/plant-disease-detection.git](https://github.com/Huma-Ibrar/plant-disease-detection.git)
-   cd plant-disease-detection
-Configure Virtual Environment:
+```
 
-Bash
-   python -m venv venv
-   # On Windows:
-   venv\Scripts\activate
-   # On macOS/Linux:
-   source venv/bin/activate
-Install Dependencies:
+---
 
-Bash
-   pip install -r requirements.txt
-📥 Model Setup & Weights Deployment
-Note: Due to standard remote asset host file size limits, the deployment-grade binary weights file (plant_disease_recog_model_pwp.keras) is provisioned externally.
+## ⚙️ Installation & Environment Setup
 
-Download Weights File: Obtain the serialized Keras artifact via our managed storage node:
+1. **Clone the Repository:**
+```bash
+git clone [https://github.com/Huma-Ibrar/plant-disease-detection.git](https://github.com/Huma-Ibrar/plant-disease-detection.git)
+cd plant-disease-detection
 
-👉 Download Pre-trained Model Weights (Ensure file is saved exactly as plant_disease_recog_model_pwp.keras)
+```
 
-Initialize Model Matrix Directory:
 
-Bash
-   mkdir models
-Deploy Artifact: Transfer the downloaded .keras file directly into the newly provisioned models/ directory.
+2. **Configure Virtual Environment:**
+```bash
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 
-🚀 Running the Application
-Verify Asset Configuration: Ensure that line execution parameters inside app.py resolve appropriately against the localized model array path:
+```
 
-Python
-   tf.keras.models.load_model("models/plant_disease_recog_model_pwp.keras")
-Boot Web Daemon:
 
-Bash
-   python app.py
-Access Service Interface: Launch your web browser and navigate to the loopback target endpoint displayed in your execution shell terminal (typically http://127.0.0.1:5000/).
+3. **Install Dependencies:**
+```bash
+pip install -r requirements.txt
 
-🚀 Core Production Enhancements
-Collision-Free File Handling: Replaced original explicit client-side file names with cryptographic uuid4() configurations to ensure sandbox isolation during simultaneous web access.
+```
 
-Strict Separation of Concerns: Abstracted model definitions, web routing engines, and raw mathematical transformations into a robust state handler loop in app.py.
 
-Reproducible Dependencies: Locked absolute versions across core image processing binaries to guarantee compile-time stability across different operating systems.
 
-🙌 Acknowledgment
+---
+
+## 📥 Model Setup & Weights Deployment
+
+> **Note:** Due to standard remote asset host file size limits, the deployment-grade binary weights file (`plant_disease_recog_model_pwp.keras`) is provisioned externally.
+
+1. **Download Weights File:** Obtain the serialized Keras artifact via our managed storage node:
+👉 [Download Pre-trained Model Weights](https://drive.google.com/file/d/1MbLe0qYmWtAn9TQNLGjPNLwbCcj5cpEk/view?usp=drive_link) *(Ensure file is saved exactly as `plant_disease_recog_model_pwp.keras`)*
+2. **Initialize Model Matrix Directory:**
+```bash
+mkdir models
+
+```
+
+
+3. **Deploy Artifact:** Transfer the downloaded `.keras` file directly into the newly provisioned `models/` directory.
+
+---
+
+## 🚀 Running the Application
+
+1. **Verify Asset Configuration:** Ensure that line execution parameters inside `app.py` resolve appropriately against the localized model array path:
+```python
+tf.keras.models.load_model("models/plant_disease_recog_model_pwp.keras")
+
+```
+
+
+2. **Boot Web Daemon:**
+```bash
+python app.py
+
+```
+
+
+3. **Access Service Interface:** Launch your web browser and navigate to the loopback target endpoint displayed in your execution shell terminal (typically `http://127.0.0.1:5000/`).
+
+---
+
+## 🚀 Core Production Enhancements
+
+* **Collision-Free File Handling:** Replaced original explicit client-side file names with cryptographic `uuid4()` configurations to ensure sandbox isolation during simultaneous web access.
+* **Strict Separation of Concerns:** Abstracted model definitions, web routing engines, and raw mathematical transformations into a robust state handler loop in `app.py`.
+* **Reproducible Dependencies:** Locked absolute versions across core image processing binaries to guarantee compile-time stability across different operating systems.
+
+---
+
+## 🙌 Acknowledgment
+
 This production iteration builds upon foundations originally contributed by Vivek Kumar, extending infrastructure boundaries to address deployment reliability, strict error bounding, and computational guardrails.
+
+```
