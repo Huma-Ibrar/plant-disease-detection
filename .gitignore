@@ -1,4 +1,12 @@
-models/
-*.keras
+# Ignore local project documentation and research reports
+docs/
 
-uploadimages/*
+# Ignore user uploaded images for testing
+uploadimages/
+
+# Ignore the heavy machine learning model file
+models/plant_disease_recog_model_pwp.keras
+
+# Ignore any temporary OS files
+.DS_Store
+Thumbs.db
