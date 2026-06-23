@@ -148,7 +148,7 @@ pip install -r requirements.txt
 > **Note:** Due to standard remote asset host file size limits, the deployment-grade binary weights file (`plant_disease_recog_model_pwp.keras`) is provisioned externally.
 
 1. **Download Weights File:** Obtain the serialized Keras artifact via our managed storage node:
-👉 [Download Pre-trained Model Weights](https://drive.google.com/file/d/1MbLe0qYmWtAn9TQNLGjPNLwbCcj5cpEk/view?usp=drive_link) *(Ensure file is saved exactly as `plant_disease_recog_model_pwp.keras`)*
+👉 [Download Pre-trained Model Weights](https://drive.google.com/file/d/1MbLe0qYmWtAn9TQNLGjPNLwbCcj5cpEk/view?usp=drive_link) 
 2. **Initialize Model Matrix Directory:**
 ```bash
 mkdir models
